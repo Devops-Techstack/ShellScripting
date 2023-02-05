@@ -1,9 +1,10 @@
 #!/bin/bash
-#Installing mutliple pkags
+#Author: DevopsTechStack
+#Installing mutliple packages
 
 if [[ $# -eq 0 ]]
 then
-  echo "Usage: $0 pkg1 pkg2 ...."
+  echo "Usage: please provide software names as command line arguments"
   exit 1
 fi
 
@@ -15,19 +16,19 @@ then
 fi
 
 
-for each_pkg in $@
+for softwares in $@
 do
-  if which $each_pkg &> /dev/null
+  if which $softwares &> /dev/null
   then
-     echo "Already $each_pkg is installed"
+     echo "Already $softwares is installed"
   else
-     echo "Installing $each_pkg ......"
-     yum install $each_pkg -y &> /dev/null 
+     echo "Installing $softwares ......"
+     yum install $softwares -y &> /dev/null
      if [[ $? -eq 0 ]]
      then
-       echo "Successfully installed $each_pkg pkg"
+       echo "Successfully installed $softwares packages"
      else
-       echo "Unable to install vim $each_pkg"
+       echo "Unable to install  $softwares"
      fi
   fi
 
