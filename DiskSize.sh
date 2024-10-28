@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Welcome "
 echo "This program get first 10 biggest file in the file system passed via positional argument"
 path="$1"
 echo $path
